@@ -1,4 +1,4 @@
-import { ChangeSort } from '../actions/sort';
+import { ChangeSort, ChangePage } from '../actions/sort';
 
 const InitialState = {
   sort: 'old',
@@ -11,6 +11,11 @@ export default function posts(state = InitialState, action) {
       state.sort = action.sort;
       return state;
     }
+
+    case ChangePage: {
+      state.currentPage = action.page;
+      return state;
+  }
 
     default:
       return state;

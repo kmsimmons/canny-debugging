@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 
 import { connect } from 'react-redux';
 
-import { fetchPosts, loadPosts, recountVotes, changePage } from '../actions/posts';
+import { fetchPosts, loadPosts, recountVotes } from '../actions/posts';
+
+import { changePage } from '../actions/sort';
 
 import './css/_PostList.css';
 
@@ -51,7 +53,7 @@ const PostList = ({ error, fetchPosts, loadPosts, pages, posts, sort, currentPag
         {[...Array(pages).keys()].map((i) => {
           const page = i + 1;
           return (
-            <div className={`page ${page === currentPage ? 'active' : ''}`} key={i} onClick={() => getPosts(page)}>
+            <div className="page" key={i} onClick={() => getPosts(page)}>
               {page}
             </div>
           );

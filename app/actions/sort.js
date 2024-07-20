@@ -5,3 +5,11 @@ export function changeSort(sort) {
     type: ChangeSort,
   };
 }
+
+export const ChangePage = 'canny/posts/change_page';
+export function changePage(page) {
+  return {
+    page,
+    type: ChangePage,
+  };
+}

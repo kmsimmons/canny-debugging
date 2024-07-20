@@ -71,8 +71,3 @@
   cursor: pointer;
   color: blue;
 }
-
-.page.active {
-  font-weight: bold;
-  border-bottom: 1px solid blue;
-}
