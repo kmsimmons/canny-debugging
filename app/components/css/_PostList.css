@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   width: 38px;
-  padding: 20px 0 3px;
+  padding: 10px 3px;
   border: 1px solid #efefef;
   margin: 0 15px 0 0;
   border-radius: 5px;
@@ -70,4 +70,9 @@
   padding: 5px;
   cursor: pointer;
   color: blue;
+}
+
+.page.active {
+  font-weight: bold;
+  border-bottom: 1px solid blue;
 }

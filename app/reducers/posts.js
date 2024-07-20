@@ -1,4 +1,4 @@
-import { PostsError, PostsLoaded, RecountVotes } from '../actions/posts';
+import { PostsError, PostsLoaded, RecountVotes, ChangePage } from '../actions/posts';
 
 const InitialState = {
   error: null,
@@ -35,6 +35,11 @@ export default function posts(state = InitialState, action) {
         votes,
       };
     }
+
+    case ChangePage: {
+      state.currentPage = action.page;
+      return state;
+  }
 
     default:
       return state;

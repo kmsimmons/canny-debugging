@@ -27,6 +27,14 @@ export function recountVotes(posts, pages) {
   };
 }
 
+export const ChangePage = 'canny/posts/change_page';
+export function changePage(page) {
+  return {
+    page,
+    type: ChangePage,
+  };
+}
+
 export function fetchPosts(params) {
   return async (dispatch, getState) => {
     const { error, pages, posts, sort } = await get('/api/posts/get', params);

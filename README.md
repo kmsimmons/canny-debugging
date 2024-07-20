@@ -86,6 +86,17 @@ For each of the following issues:
     Please feel free to reach out with any additional questions,
     Kyle
 
+**Other Stuff**
+    1. I noticed that on page change, the default sort ('Old') was being used. Ex.
+    - A user loads the page (the default sort 'Old' is selected), posts are sorted correctly.
+    - The user clicks 'Top', posts are sorted correctly (highest number of votes to lowest).
+    - The user navigates to another page -> the sort still shows 'Top' but the list is sorted by 'Old'.
+    I updated fetchPosts to keep track of the sort on page change.
+
+    2. The sort dropdown was only closing when an option was selected. To improve user experience, I
+    added setMenuOpen(false) to the onClick method so that if the dropdown is clicked again, it closes (if a user
+    does not want to change the sort, for example). I also added an event listener that closes the dropdown if 
+    the user clicks outside of the dropdown.
 ## 🎉 You're Done 🎉
 
 Congrats on completing our assessment. All that is left for you to do is submit your assessment. We made a command that will zip your submission and send it to us.
