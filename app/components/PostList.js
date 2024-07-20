@@ -19,7 +19,7 @@ const PostList = ({ error, fetchPosts, loadPosts, pages, posts, sort, currentPag
 
   const getPosts = (page) => {
     changePage(page, sort);
-    fetchPosts({ page, sort });
+    fetchPosts({ page: page, sort: sort.sort });
   };
 
   if (error) {

@@ -8,17 +8,13 @@ const InitialState = {
 export default function posts(state = InitialState, action) {
   switch (action.type) {
     case ChangeSort: {
-      return {
-        ...state,
-        sort
-      }
+      state.sort = action.sort;
+      return state;
     }
 
     case ChangePage: {
-      return {
-        ...state,
-        currentPage: action.page,
-      };
+        state.currentPage = action.currentPage;
+        return state;
     }
 
     default:

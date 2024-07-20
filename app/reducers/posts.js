@@ -5,6 +5,7 @@ const InitialState = {
   pages: 0,
   posts: [],
   votes: 0,
+  currentPage: 1,
 };
 
 export default function posts(state = InitialState, action) {
