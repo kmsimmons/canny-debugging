@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { connect } from 'react-redux';
 
@@ -26,14 +26,29 @@ const Selector = ({ hidden, onSelect, selected }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   // selectedOption's (previously option -> renamed for readability) state was not being updated onClickOption
   const [selectedOption, setSelectedOption] = React.useState(Options.find((option) => option.name === selected));
+  const dropdownRef = useRef(null);
 
   const onOpenMenu = () => {
     if (menuOpen) {
+      setMenuOpen(false);
       return;
     }
 
     setMenuOpen(true);
   };
+
+  const handleClickOutsideOfDropdown = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutsideOfDropdown);
+    return (() => {
+      document.removeEventListener('mousedown', handleClickOutsideOfDropdown);
+    })
+  }, [])
 
   const onClickOption = (option) => {
     setMenuOpen(false);
@@ -52,7 +67,7 @@ const Selector = ({ hidden, onSelect, selected }) => {
   });
 
   return (
-    <div className="selector" onClick={onOpenMenu}>
+    <div className="selector" onClick={onOpenMenu} ref={dropdownRef}>
       <div className="selectedName">{selectedOption.render}</div>
       <div className="icon-chevron-down">v</div>
       {menuOpen && (

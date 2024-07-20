@@ -18,7 +18,7 @@ const PostList = ({ error, fetchPosts, loadPosts, pages, posts, sort, currentPag
   }, [currentPage, fetchPosts]);
 
   const getPosts = (page) => {
-    changePage(page, sort);
+    changePage(page);
     fetchPosts({ page: page, sort: sort.sort });
   };
 
