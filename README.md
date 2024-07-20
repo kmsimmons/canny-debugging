@@ -97,6 +97,7 @@ For each of the following issues:
     added setMenuOpen(false) to the onClick method so that if the dropdown is clicked again, it closes (if a user
     does not want to change the sort, for example). I also added an event listener that closes the dropdown if 
     the user clicks outside of the dropdown.
+
 ## 🎉 You're Done 🎉
 
 Congrats on completing our assessment. All that is left for you to do is submit your assessment. We made a command that will zip your submission and send it to us.
